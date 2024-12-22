@@ -5,8 +5,8 @@ With Seed API, you can compile all your transactions, fees, and payments into a 
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
+- **Type:** Contract 
+- **Position:** Consuming 
 - **Access:** 3rd-Party 
 
 ## Tags
@@ -15,8 +15,8 @@ With Seed API, you can compile all your transactions, fees, and payments into a 
 
 ## Timestamps
 
-- **Created:** 2024-11-07T00:00:00.000Z 
-- **Modified:** 2024-12-15 
+- **Created:** 2024-11-07 
+- **Modified:** 2024-12-22 
 
 ## APIs
 
@@ -24,6 +24,7 @@ With Seed API, you can compile all your transactions, fees, and payments into a 
 With Seed API, you can compile all your transactions, fees, and payments into a single bill across all your business channels   like vending, micro markets, or office coffee and pantry services. Get more sales transparency. Seed API collects your real-time sales data into comprehensive reports, giving greater insight into sales performance ...
 
 **Human URL:** [https://www.cantaloupe.com/solutions/services/seed-api](https://www.cantaloupe.com/solutions/services/seed-api)
+r
 
 #### Tags
 
