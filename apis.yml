@@ -4,9 +4,9 @@ url: >-
 name: Cantaloupe Seed API
 tags:
   - Billing
-  - Vending
   - Payments
   - Retail
+  - Vending
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
