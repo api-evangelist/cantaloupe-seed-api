@@ -12,7 +12,7 @@ description: >-
   can monitor performance, payment types, and profitability across their
   fleet.
 type: Index
-x-type: company
+kind: company
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -79,9 +79,9 @@ common:
     url: https://www.cantaloupe.com/about-us
   - type: Blog
     url: https://www.cantaloupe.com/resources/blog
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.cantaloupe.com/privacy-policy
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.cantaloupe.com/terms-of-service
 maintainers:
   - FN: Kin Lane
