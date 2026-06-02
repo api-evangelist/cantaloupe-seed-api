@@ -2,12 +2,17 @@
   "repo": "cantaloupe-seed-api",
   "feeds": [
     {
-      "source": "https://www.cantaloupe.com/resources/blog",
+      "source": "https://www.cantaloupe.com/feed/",
       "feed_url": "https://www.cantaloupe.com/feed/",
-      "title": "Cantaloupe",
-      "saved": 1
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.cantaloupe.com/about-us",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-05-17T20:20:35Z",
-  "post_count": 11
+  "fetched": "2026-06-01T23:35:02Z",
+  "post_count": 12
 }
