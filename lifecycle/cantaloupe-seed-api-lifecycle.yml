@@ -1,0 +1,51 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.cantaloupe.com/status/, https://www.cantaloupe.com/release-notes/,
+  https://www.cantaloupe.com/legal/ (Master Services Agreement),
+  https://www.cantaloupe.com/products/integrations/seed-api/
+description: >-
+  Operational lifecycle for Cantaloupe's Seed platform. Cantaloupe runs a real,
+  dated public status page and a public release-notes section, but publishes no
+  API versioning policy, no deprecation policy and no public SLA — consistent
+  with an API whose reference lives behind a sales/customer gate.
+versioning:
+  scheme: null
+  mechanism: null
+  docs: null
+  notes: >-
+    No published API versioning scheme. No public reference exists to state one,
+    and no contract was found to derive one from. The only publicly described
+    endpoint (Spotlight report execution at api.mycantaloupe.com/Reports/Run,
+    documented by a third-party client) carries no version segment.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  notes: >-
+    No deprecation policy published, and no RFC 8594 Sunset/Deprecation headers
+    could be observed because every endpoint is credential-gated. No
+    `Deprecation` pointer is emitted in apis.yml.
+sla:
+  url: https://www.cantaloupe.com/legal/
+  public_uptime_target: null
+  notes: >-
+    Availability commitments sit inside the Master Services Agreement linked
+    from the Legal page; no numeric uptime target is published on the web.
+status_page:
+  url: https://www.cantaloupe.com/status/
+  status: 200
+  machine_readable: false
+  notes: >-
+    A first-party, hand-maintained incident log on the marketing site (not a
+    Statuspage/Instatus tenant, no JSON or RSS feed, no per-component history).
+    Entries are dated and specific — e.g. "07.09.26 12:00pm ET Seed DEX
+    Processing Delay", with prior updates back through 03.2026 — and cover Seed
+    and Seed Live, so an operator can see platform incidents; an agent cannot
+    subscribe to them.
+release_notes:
+  url: https://www.cantaloupe.com/release-notes/
+  status: 200
+  scope: >-
+    Product release notes, currently Cheq only. Nothing in the section covers
+    the Seed API surface.
+  detail: changelog/cantaloupe-seed-api-changelog.yml

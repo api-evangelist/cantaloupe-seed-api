@@ -1,0 +1,52 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Live probe of https://api.mycantaloupe.com/Reports/Run (2026-09-06) with a
+  control probe on the same host; corroborated by the third-party client
+  https://github.com/pepsimidamerica/clope (clope/spotlight/spotlight.py).
+description: >-
+  Cantaloupe publishes NO authentication documentation. This profile is built
+  from what the API host itself returns on the wire, plus a third-party client's
+  source, and is recorded for accuracy — NOT wired as an `Authentication`
+  pointer in apis.yml, because the scored check measures documentation the
+  PROVIDER publishes, and Cantaloupe publishes none.
+documented_by_provider: false
+docs: null
+schemes:
+  - id: http-basic
+    type: http
+    scheme: basic
+    realm: Cantaloupe
+    host: https://api.mycantaloupe.com
+    surface: Spotlight reporting API (GET /Reports/Run?ReportId=<id>)
+    credentials: >-
+      Username and password issued by Cantaloupe to a Seed Office tenant. The
+      third-party clope client reads them from CLO_USERNAME / CLO_PASSWORD and
+      notes the report must first be shared with the "Seed Spotlight API Users"
+      security group inside Seed Office.
+    evidence:
+      - url: https://api.mycantaloupe.com/Reports/Run
+        status: 401
+        header: 'WWW-Authenticate: Basic realm="Cantaloupe"'
+        fetched: '2026-09-06'
+      - url: https://api.mycantaloupe.com/this-path-does-not-exist-control-9f3a
+        status: 404
+        note: >-
+          Control probe. The 404 on a path that does not exist proves the 401
+          above is a real protected route, not a blanket deny.
+  - id: unknown-gateway-auth
+    type: unknown
+    host: https://api.seedlive.com
+    evidence:
+      - url: https://api.seedlive.com/
+        status: 403
+        header: 'x-amzn-errortype: MissingAuthenticationTokenException'
+        fetched: '2026-09-06'
+        note: >-
+          AWS API Gateway. The response is identical for every path, so the
+          scheme (IAM SigV4, API key, or a custom authorizer) cannot be
+          determined anonymously.
+oauth2: false
+openid_connect: false
+api_keys: not documented
+mtls: not documented

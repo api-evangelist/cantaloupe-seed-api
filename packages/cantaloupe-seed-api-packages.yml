@@ -1,0 +1,45 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://pypi.org/pypi/clope/json, https://github.com/pepsimidamerica/clope,
+  plus registry searches of npm (registry.npmjs.org), PyPI, RubyGems, NuGet,
+  Maven Central, crates.io and pkg.go.dev for a first-party Cantaloupe client.
+description: >-
+  NO FIRST-PARTY SDK. Cantaloupe publishes no client libraries for the Seed API
+  or the Spotlight reporting API on any public package registry, and its own
+  site has no developer/SDK page (see x-coverage in apis.yml). The one library
+  that exists is a third-party wrapper written by an operator, recorded here
+  because it is the only public, dated, machine-readable evidence of how the
+  Cantaloupe API is actually called. No `SDKs` pointer is emitted in apis.yml:
+  sdk_count measures FIRST-PARTY libraries, and this is not one.
+official_sdk_count: 0
+packages:
+  - language: python
+    registry: pypi
+    name: clope
+    url: https://pypi.org/project/clope/
+    source: https://github.com/pepsimidamerica/clope
+    install: pip install clope
+    official: false
+    publisher: Jordan Maynor (Pepsi MidAmerica) — a Cantaloupe customer, not Cantaloupe
+    version: '1.0'
+    published: '2026-08-14'
+    first_published: '2024-07-30'
+    license: Unlicense (public domain)
+    wraps: >-
+      The Cantaloupe "Spotlight" reporting API — GET
+      https://api.mycantaloupe.com/Reports/Run?ReportId=<id> with HTTP Basic
+      credentials issued by Cantaloupe, returning an Excel workbook. Also ships
+      a module for the Cantaloupe Snowflake data-warehouse product.
+    note: >-
+      Actively maintained (16 releases, 2024-07-30 through 2026-08-14) and the
+      only public description of a callable Cantaloupe endpoint we could find.
+      Its README states the credentials "should be provided by Cantaloupe" and
+      that reports must be shared with the "Seed Spotlight API Users" security
+      group in Seed Office, which corroborates the customer-gated access model.
+excluded:
+  - name: cantaloupe-sdk / cantaloupe-cli / cantaloupe (npm)
+    reason: >-
+      Name collision. These npm packages belong to cantaloupe.io and to an
+      unrelated TypeScript utility library, not to Cantaloupe, Inc. of Malvern,
+      PA. Not recorded as this provider's packages.

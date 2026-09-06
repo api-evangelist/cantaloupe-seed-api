@@ -50,7 +50,7 @@ tags:
   - Unattended Retail
   - Vending
 created: '2024-11-07'
-modified: '2026-04-23'
+modified: '2026-09-06'
 specificationVersion: '0.23'
 apis:
   - aid: cantaloupe-seed-api:cantaloupe-seed-api
@@ -62,7 +62,8 @@ apis:
       micro markets, and office coffee and pantry services, and surfaces
       real-time sales data as comprehensive reports covering performance,
       payment mix, and profitability.
-    humanURL: https://www.cantaloupe.com/solutions/services/seed-api
+    humanURL: https://www.cantaloupe.com/products/integrations/seed-api/
+    baseURL: https://api.mycantaloupe.com
     tags:
       - Billing
       - Cashless Payments
@@ -70,11 +71,11 @@ apis:
       - Vending
     properties:
       - type: Documentation
-        url: https://www.cantaloupe.com/solutions/services/seed-api
+        url: https://www.cantaloupe.com/products/integrations/seed-api/
       - type: Website
-        url: https://www.cantaloupe.com/solutions/services/seed-api
+        url: https://www.cantaloupe.com/products/integrations/seed-api/
       - type: Support
-        url: https://www.cantaloupe.com/support
+        url: https://www.cantaloupe.com/help-center/
     x-features:
       - POS integration to Cantaloupe's cashless cloud gateway
       - Accepts debit/credit, mobile and digital wallets, and NFC
@@ -92,24 +93,73 @@ apis:
       - Analyzing payment type mix and channel profitability
       - Integrating vending data into accounting or ERP systems
 common:
-  - type: TrustCenter
-    url: security/cantaloupe-seed-api-trust-center.yml
-  - type: DomainSecurity
-    url: security/cantaloupe-seed-api-domain-security.yml
   - type: Website
     url: https://www.cantaloupe.com/
   - type: Documentation
-    url: https://www.cantaloupe.com/solutions/services/seed-api
+    url: https://www.cantaloupe.com/products/integrations/seed-api/
   - type: Support
-    url: https://www.cantaloupe.com/support
+    url: https://www.cantaloupe.com/help-center/
   - type: About
-    url: https://www.cantaloupe.com/about-us
+    url: https://www.cantaloupe.com/company/about/
   - type: Blog
-    url: https://www.cantaloupe.com/resources/blog
+    url: https://www.cantaloupe.com/resources/blog/
+  - type: Pricing
+    url: https://www.cantaloupe.com/pricing/
+  - type: Login
+    url: https://www.mycantaloupe.com/login/
   - type: PrivacyPolicy
-    url: https://www.cantaloupe.com/privacy-policy
+    url: https://www.cantaloupe.com/legal/cantaloupe-privacy-policy/
   - type: TermsOfService
-    url: https://www.cantaloupe.com/terms-of-service
+    url: https://www.cantaloupe.com/wp-content/uploads/2024/10/Cantaloupe-Website-Terms-of-Use.pdf
+  - type: StatusPage
+    url: https://www.cantaloupe.com/status/
+  - type: ChangeLog
+    url: https://www.cantaloupe.com/release-notes/
+  - type: Compliance
+    url: https://www.cantaloupe.com/legal/compliance/
+  - type: Security
+    url: https://www.cantaloupe.com/legal/compliance/
+  - type: Lifecycle
+    url: lifecycle/cantaloupe-seed-api-lifecycle.yml
+  - type: Conformance
+    url: conformance/cantaloupe-seed-api-conformance.yml
+  - type: TrustCenter
+    url: security/cantaloupe-seed-api-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/cantaloupe-seed-api-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/cantaloupe-seed-api-domain-security.yml
+  - type: Packages
+    url: packages/cantaloupe-seed-api-packages.yml
+  - type: LLMsTxt
+    url: llms/cantaloupe-seed-api-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-06'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    The Seed API product page publishes no reference at all — its only call to
+    action is a Marketo lead form ("See what's possible with Seed API… our team
+    will be in touch") — while the live API host answers 401 with
+    WWW-Authenticate: Basic realm="Cantaloupe" on the one endpoint a third-party
+    client documents, so the contract is reachable only after a sales
+    conversation and per-tenant credential issuance.
+  evidence:
+    - url: https://www.cantaloupe.com/products/integrations/seed-api/
+      status: 200
+    - url: https://api.mycantaloupe.com/Reports/Run
+      status: 401
+    - url: https://api.mycantaloupe.com/this-path-does-not-exist-control-9f3a
+      status: 404
+    - url: https://api.seedlive.com/openapi.json
+      status: 403
+    - url: https://www.cantaloupe.com/openapi.json
+      status: 404
+  checked: '2026-09-06'

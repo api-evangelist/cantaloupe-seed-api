@@ -1,0 +1,67 @@
+generated: '2026-09-06'
+method: searched
+source: https://www.cantaloupe.com/release-notes/
+docs: https://www.cantaloupe.com/release-notes/
+description: >-
+  Cantaloupe publishes a dated Release Notes section on its marketing site. It
+  is real and current, but its scope is narrow: every one of the twelve entries
+  published since February 2024 is a Cheq (payments/POS app) product note. There
+  is NO changelog for the Seed API, Seed Live, Seed Pro or the Spotlight
+  reporting API, and no API version history of any kind. Recorded so the gap is
+  legible rather than invisible.
+versioning:
+  scheme: none published
+  api_versioned: false
+  header: null
+  current: null
+scope:
+  products_covered:
+    - Cheq
+  products_not_covered:
+    - Seed API
+    - Seed Live
+    - Seed Pro
+    - Seed Markets
+    - Spotlight reporting API
+cadence: irregular — roughly quarterly, 12 entries between 2024-02-28 and 2026-06-05
+entry_count: 12
+entries:
+  - version: 'Cheq by Cantaloupe | June 2026'
+    date: '2026-06-05'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-by-cantaloupe-june-2026/
+    highlights:
+      - The latest updates and enhancements for Cheq by Cantaloupe.
+  - version: 'Cheq by Cantaloupe | February 2026'
+    date: '2026-02-12'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-by-cantaloupe-february-2026/
+  - version: 'Cheq by Cantaloupe | October 2025'
+    date: '2025-10-20'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-by-cantaloupe-october-2025/
+  - version: 'Cheq by Cantaloupe | July 2025'
+    date: '2025-07-02'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-by-cantaloupe-july-2025/
+  - version: 'Cheq by Cantaloupe | April 2025'
+    date: '2025-04-08'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-by-cantaloupe-april-2025/
+    highlights:
+      - Product, platform, reporting, and Cheq in Action updates for April 2025.
+  - version: 'Cheq | February 2025'
+    date: '2025-02-03'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-february-2025/
+    highlights:
+      - Product, platform, and Cheq in Action updates for February 2025.
+  - version: 'Cheq | November 2024'
+    date: '2024-11-05'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/november-2024-cheq/
+  - version: 'Cheq | August 2024'
+    date: '2024-08-07'
+    product: Cheq
+    url: https://www.cantaloupe.com/articles/release-note/cheq-august-2024/
+breaking_changes_published: false

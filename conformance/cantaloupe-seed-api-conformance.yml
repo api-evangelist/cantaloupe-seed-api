@@ -1,0 +1,76 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.cantaloupe.com/legal/compliance/ (certifications, PCI DSS FAQ,
+  P2PE); live probes of https://api.mycantaloupe.com/Reports/Run and
+  https://api.seedlive.com/ for auth and discovery behaviour.
+description: >-
+  Cross-cutting standards conformance for Cantaloupe. The certification claims
+  are the company's own published statements on its compliance page and are
+  strong; everything protocol-level is recorded as NOT conformant or unknown
+  because Cantaloupe publishes no machine-readable contract and no public API
+  reference, so there is nothing to read a protocol claim out of.
+standards:
+  - id: pci-dss
+    conforms: true
+    version: '4.0'
+    evidence: >-
+      "Cantaloupe is PCI-DSS compliant ... and PCI-DSS – Level 1 – Service
+      Provider certified", and "fully compliant with PCI DSS including version
+      4.0", stated on https://www.cantaloupe.com/legal/compliance/ (fetched
+      2026-09-06, HTTP 200). The page names Visa's Global Registry of Service
+      Providers as the external record.
+  - id: soc2-type2
+    conforms: true
+    evidence: >-
+      "our organization is SOC 2 Type 2 compliant" —
+      https://www.cantaloupe.com/legal/compliance/ (HTTP 200).
+  - id: iso-27001
+    conforms: true
+    version: '2022'
+    evidence: >-
+      "We adhere to ISO/IEC 27001:2022" —
+      https://www.cantaloupe.com/legal/compliance/ (HTTP 200).
+  - id: p2pe
+    conforms: true
+    evidence: >-
+      Point-to-point encryption from the card reader through to the processor,
+      described on https://www.cantaloupe.com/legal/compliance/. Published as a
+      security practice; no PCI P2PE listing number is given.
+  - id: http-basic-auth
+    conforms: true
+    evidence: >-
+      Probed 2026-09-06: GET https://api.mycantaloupe.com/Reports/Run returned
+      401 with `WWW-Authenticate: Basic realm="Cantaloupe"`, while a control
+      path (/this-path-does-not-exist-control-9f3a) on the same host returned
+      404 — so the route exists and is protected by RFC 7617 Basic auth.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No OAuth surface published. /.well-known/oauth-authorization-server 404s
+      on every Cantaloupe host (well-known/cantaloupe-seed-api-well-known.yml);
+      the only observed challenge is HTTP Basic.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration 404 on every host probed.
+  - id: rfc9457
+    conforms: false
+    evidence: >-
+      Unknown-to-absent. No public error reference and no contract; the one
+      documented endpoint returns an Excel workbook, not application/problem+json.
+  - id: openapi
+    conforms: false
+    evidence: >-
+      No OpenAPI/Swagger document at any probed location on www.cantaloupe.com,
+      api.mycantaloupe.com, api.seedlive.com, seedlive.com or mycantaloupe.com.
+  - id: idempotency
+    conforms: false
+    evidence: No published idempotency mechanism; no reference documentation to state one.
+domain_standard:
+  asserted: false
+  note: >-
+    Payments is a regime with real domain standards (PCI DSS, EMV, ISO 20022,
+    ISO 8583), and Cantaloupe certifies against PCI DSS — but 0.12.0's
+    domain_standard_conformance reads the CONTRACT declaring the standard, and
+    Cantaloupe publishes no contract. Recorded as not asserted rather than
+    credited from a marketing-page claim.

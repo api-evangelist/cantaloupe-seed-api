@@ -1,17 +1,41 @@
-generated: '2026-07-11'
+generated: '2026-09-06'
 method: searched
 probe: true
 source: https://www.cantaloupe.com/legal/compliance/
 url: https://www.cantaloupe.com/legal/compliance/
+description: >-
+  Cantaloupe publishes a compliance page rather than a hosted trust center
+  (no trust.cantaloupe.com — DNS does not resolve, probed 2026-09-06). The page
+  names three certifications, answers a security FAQ, and gives a security
+  contact, but publishes no downloadable report, no subprocessor list, and no
+  document-request portal.
+verified: '2026-09-06'
+status: 200
 certifications:
-- SOC 2
-- ISO 27001
-- PCI DSS
+  - name: PCI DSS
+    detail: Level 1 Service Provider certified; compliant with PCI DSS 4.0, reassessed annually
+    external_register: Visa Global Registry of Service Providers (named on the page)
+  - name: SOC 2
+    detail: SOC 2 Type 2
+  - name: ISO 27001
+    detail: ISO/IEC 27001:2022
+practices:
+  - point-to-point encryption (P2PE) from card reader to processor
+  - incident response with containment, investigation, remediation and regulatory notification
+security_contact: security@cantaloupe.com
+report_download: false
+subprocessors_published: false
 evidence:
-- source: https://www.cantaloupe.com/legal/compliance/
-  keywords:
-  - soc 2
-  - soc2
-  - iso/iec 27001
-  - pci dss
-  - pci-dss
+  - source: https://www.cantaloupe.com/legal/compliance/
+    status: 200
+    fetched: '2026-09-06'
+    keywords:
+      - soc 2 type 2
+      - iso/iec 27001:2022
+      - pci-dss level 1 service provider
+      - pci dss 4.0
+      - point-to-point encryption
+  - source: https://trust.cantaloupe.com/
+    status: 0
+    fetched: '2026-09-06'
+    note: does not resolve
